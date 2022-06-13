@@ -3,7 +3,7 @@ package ru.yandexpracticum.deposit;
 import java.util.Scanner;
 
 public class DepositCalculator {
-    public static final double YEAR_RATE =0.6;
+    public static final double YEAR_RATE = 0.6;
     public static void main(String[] args) {
         new DepositCalculator().calculateAmountWithPercent();
     }
