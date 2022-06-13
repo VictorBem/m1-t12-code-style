@@ -33,12 +33,13 @@ public class DepositCalculator {
         period = scanner.nextInt();
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
-
+        // 0.06 можно в константу вынести 
         if (action == 1) {
             calculatedAmountWithPercent = calculateSimplePercent(amount, 0.06, period);
         } else if (action == 2) {
             calculatedAmountWithPercent = calculateComplexPercent(amount, 0.06, period);
         }
+        // на мой взгляд когда переменных больше 2 все же удобнее printf
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в "
                 + calculatedAmountWithPercent);
     }
