@@ -1,6 +1,9 @@
+package ru.yandexpracticum.deposit;
+
 import java.util.Scanner;
 
 public class DepositCalculator {
+    public static final double YEAR_RATE =0.6;
     public static void main(String[] args) {
         new DepositCalculator().calculateAmountWithPercent();
     }
@@ -35,12 +38,12 @@ public class DepositCalculator {
         action = scanner.nextInt();
         // 0.06 можно в константу вынести 
         if (action == 1) {
-            calculatedAmountWithPercent = calculateSimplePercent(amount, 0.06, period);
+            calculatedAmountWithPercent = calculateSimplePercent(amount, YEAR_RATE, period);
         } else if (action == 2) {
-            calculatedAmountWithPercent = calculateComplexPercent(amount, 0.06, period);
+            calculatedAmountWithPercent = calculateComplexPercent(amount, YEAR_RATE, period);
         }
         // на мой взгляд когда переменных больше 2 все же удобнее printf
-        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в "
-                + calculatedAmountWithPercent);
+        System.out.printf("Результат вклада: %d руб. за %d лет превратятся в %f", amount,
+                period, calculatedAmountWithPercent);
     }
 }
